@@ -1,0 +1,39 @@
+<mvc:View controllerName="com.hhn.tutorial.SAPUI5.controller.Table" xmlns:mvc="sap.ui.core.mvc" displayBlock="true" xmlns="sap.m">
+	<Page id="page" title="{i18n>title}" showNavButton="true" navButtonPress="handleNav">
+		<content>
+			<VBox justifyContent="Center" alignItems="Center" class="sapUiMediumMargin">
+				<Title text="{i18n>table.title}"/>
+			</VBox>
+			<Table id="table" items="{ path: '/userList', sorter: { path: 'userId' } }">
+				<columns>
+					<Column width="12em">
+						<Text text="{i18n>table.id}"/>
+					</Column>
+					<Column minScreenWidth="Tablet" demandPopin="true">
+						<Text text="{i18n>form.name}"/>
+					</Column>
+					<Column minScreenWidth="Desktop" demandPopin="true">
+						<Text text="{i18n>form.surname}"/>
+					</Column>
+					<Column minScreenWidth="Desktop" demandPopin="true">
+						<Text text="{i18n>form.email}"/>
+					</Column>
+					<Column minScreenWidth="Desktop" demandPopin="true">
+						<Text text="{i18n>form.createDate}"/>
+					</Column>
+				</columns>
+				<items>
+					<ColumnListItem type="Active" press=".onItemPress">
+						<cells>
+							<Text text="{userId}"/>
+							<Text text="{name}"/>
+							<Text text="{ path: 'surname', formatter: '.formatter.toCapitalize' }"/>
+							<Text text="{email}" />
+							<Text text="{ path: 'createDate', formatter: '.formatter.toPrettyDate'}" />
+						</cells>
+					</ColumnListItem>
+				</items>
+			</Table>
+		</content>
+	</Page>
+</mvc:View>

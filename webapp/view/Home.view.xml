@@ -1,0 +1,31 @@
+<mvc:View controllerName="com.hhn.tutorial.SAPUI5.controller.Home" xmlns:mvc="sap.ui.core.mvc" displayBlock="true" xmlns="sap.m">
+	<Shell id="shell">
+		<App id="app">
+			<pages>
+				<Page id="page" title="{i18n>title}">
+					<content>
+						<VBox justifyContent="Center" alignItems="Center" class="sapUiMediumMargin">
+							<Title text="{i18n>form.title}"/>
+							<HBox class="sapUiSmallMargin">
+								<VBox>
+									<Label text="{i18n>form.name}:" labelFor="iName" class="sapUiSmallMarginTop" textAlign="Left"/>
+									<Label text="{i18n>form.surname}:" labelFor="iSurname" class="sapUiSmallMarginTop" textAlign="Left"/>
+									<Label text="{i18n>form.email}:" labelFor="iEmail" class="sapUiSmallMarginTop" textAlign="Left"/>
+									<Label text="{i18n>form.createDate}:" labelFor="iCreateDate" class="sapUiSmallMarginTop" textAlign="Left"/>
+								</VBox>
+								<VBox>
+									<Input id="iName" placeholder="{i18n>form.name}" width="20rem" class="sapUiSmallMarginBegin"/>
+									<Input id="iSurname" placeholder="{i18n>form.surname}" width="20rem" class="sapUiSmallMarginBegin"/>
+									<Input id="iEmail" placeholder="{i18n>form.email}" type="Email" width="20rem" class="sapUiSmallMarginBegin"/>
+									<DatePicker id="iCreateDate" placeholder="{i18n>form.createDate}" width="20rem" class="sapUiSmallMarginBegin"/>
+								</VBox>
+							</HBox>
+							<Button type="Accept" text="{i18n>form.buttonAccept}" press=".onPress" width="12rem"/>
+							<Button text="{i18n>form.buttonNav}" press=".onPress" width="10rem"/>
+						</VBox>
+					</content>
+				</Page>
+			</pages>
+		</App>
+	</Shell>
+</mvc:View>
